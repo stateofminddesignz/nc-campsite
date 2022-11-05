@@ -1,16 +1,19 @@
-import { CAMPSITES } from '../../app/shared/CAMPSITES';
+
 import { Col , Row} from 'reactstrap';
 import CampsiteCard from "./CampsiteCard";
-import { render } from '@testing-library/react';
+
+import { selectAllCampsites } from './campsitesSlice';
 
 
-const CampsiteList = ()=>{
+const CampsiteList = ({setCampsiteId})=>{
+
+const campsites = selectAllCampsites();
 return(
   <Row className="prop ms-auto">
-    {CAMPSITES.map((campsite)=>{
+    {campsites.map((campsite)=>{
         
         return(
-            <Col md='5' className='m-4' key={campsite.id}>
+            <Col md='5' className='m-4' key={campsite.id} onclick={()=>setCampsiteId(campsite.id) } >
                 <CampsiteCard campsite={campsite}/>
 
             </Col>
