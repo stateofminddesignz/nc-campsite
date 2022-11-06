@@ -5,7 +5,7 @@ import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from './campsitesSlice';
 
 
-const CampsiteList = ({setCampsiteId})=>{
+const CampsiteList = ()=>{
 
 const campsites = selectAllCampsites();
 return(
@@ -13,7 +13,7 @@ return(
     {campsites.map((campsite)=>{
         
         return(
-            <Col md='5' className='m-4' key={campsite.id} onclick={()=>setCampsiteId(campsite.id) } >
+            <Col md='5' className='m-4' key={campsite.id}  >
                 <CampsiteCard campsite={campsite}/>
 
             </Col>
