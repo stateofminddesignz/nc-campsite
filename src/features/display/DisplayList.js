@@ -1,5 +1,6 @@
 import {Row,Col} from 'reactstrap';
-import DisplayCard from './DisplayCard';
+import AnimatedDisplayCard from './AnimatedDisplayCard';
+//import DisplayCard from './DisplayCard';
 import { selectFeaturedCampsite } from '../campsites/campsitesSlice';
 import {selectFeaturedPromotion} from '../promotions/PromotionsSlice';
 import { selectFeaturedPartner } from '../partners/partnersSlice';
@@ -12,10 +13,15 @@ const DisplayList = () => {
    return(
     <Row>
         {items.map((item,idx) => {
+            
             return(
+                //Implemented conditional rendering in DisplayList
+                item &&(
                 <Col md className='m-1' key={idx}>
-                    <DisplayCard item={item}/>
+                    <AnimatedDisplayCard item={item}/>
                 </Col>
+
+            )
             );
         } )}
 
