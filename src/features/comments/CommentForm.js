@@ -60,6 +60,10 @@ setModalOpen(false)
                                     <option>4</option>
                                     <option>5</option>
                                 </Field>
+                                <ErrorMessage name='rating' >
+                                {(msg) => <p className='text-danger'>{msg}</p>}
+
+                                </ErrorMessage>
                     </FormGroup>
 
                     
@@ -74,6 +78,10 @@ setModalOpen(false)
                                     placeholder='Your Name'
                                     className='form-control'
                                 />
+                                <ErrorMessage name='author' >
+                                {(msg) => <p className='text-danger'>{msg}</p>}
+
+                                </ErrorMessage>
                     </FormGroup>
 
                     
